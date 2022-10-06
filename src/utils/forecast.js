@@ -12,7 +12,9 @@ const forecast = (lat,long,callback) => {
         callback('Unable to find location!')
     } else {
         callback(undefined,{
-            condition : body.currentConditions.conditions,
+            condition: body.currentConditions.conditions,
+            tempmax: body.days[0].tempmax,
+            tempmin: body.days[0].tempmin,
             currentTemp: body.currentConditions.temp,
             feelsLikeTemp: body.currentConditions.feelslike
         })

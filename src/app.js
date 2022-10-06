@@ -55,7 +55,7 @@ app.get('/weather', (req,res) => {
             })
         } 
 
-        forecast(latitude,longitude, (error, {condition, currentTemp, feelsLikeTemp}= {}) => {
+        forecast(latitude,longitude, (error, {condition, currentTemp, feelsLikeTemp, tempmax, tempmin}= {}) => {
             if(error){
                 return res.send({
                     error
@@ -63,7 +63,7 @@ app.get('/weather', (req,res) => {
             } 
 
             res.send({
-                forecast: 'Currently it is '+ condition +'. It is ' + currentTemp + ' outside, and it feels like ' +feelsLikeTemp+'.',
+                forecast: 'Currently it is '+ condition +'. It is ' + currentTemp + ' outside, and it feels like ' +feelsLikeTemp+'. The max temperature is ' + tempmax +'ºC and min temperature '+  tempmin +'ºC for today.',
                 location,
                 address: req.query.address
             })
