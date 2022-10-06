@@ -101,6 +101,6 @@ app.get('*',(req,res) =>{
         name: 'Luis Gomes'})
 })
 
-app.listen(PORT, () => {
-    console.log('Server is up on port ' + PORT + '!')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port + '!')
 })
